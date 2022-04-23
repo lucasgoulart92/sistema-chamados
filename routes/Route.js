@@ -1,4 +1,4 @@
-import {Route, Redirect} from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 
 export default function RouterWrapper({
     component: Component,
@@ -21,7 +21,7 @@ export default function RouterWrapper({
     }
     // se não estiver logado e a página for privada, redireciona para a tela de login
 
-    if(signed && isPrivate){
+    if(signed && !isPrivate){
         return <Redirect to="/dashboard" />
     }
     // se estiver logado e a página não for privada, envia para o dashboard
